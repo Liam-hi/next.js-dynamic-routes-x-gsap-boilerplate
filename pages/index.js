@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/components/Navbar'
 import Link from 'next/link'
+import TriggeredCallback from '@/components/TriggeredCallback'
+import OnInteraction from '@/components/OnInteraction'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,6 +26,8 @@ export default function Home() {
   return (
     <>
     <Navbar />
+    <TriggeredCallback />
+    <OnInteraction />
     <h1>Home page</h1>
     <h2>Populate data</h2>
     { populate }
