@@ -17,7 +17,7 @@ export default function Details() {
     
   return (
     <div>
-        <h1>Details</h1>
+        <h1>Retrieve data</h1>
         <h1>{retrieveData.name}</h1>
       
     </div>

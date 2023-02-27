@@ -23,8 +23,9 @@ export default function Home() {
 
   return (
     <>
-    <h1>Home</h1>
     <Navbar />
+    <h1>Home page</h1>
+    <h2>Populate data</h2>
     { populate }
     </>
   )
