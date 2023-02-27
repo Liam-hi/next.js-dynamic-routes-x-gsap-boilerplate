@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import Navbar from '@/components/Navbar'
 import Link from 'next/link'
 import TriggeredCallback from '@/components/TriggeredCallback'
@@ -26,8 +25,8 @@ export default function Home() {
   return (
     <>
     <Navbar />
-    <TriggeredCallback />
-    <OnInteraction />
+{/*     <TriggeredCallback />
+    <OnInteraction /> */}
     <h1>Home page</h1>
     <h2>Populate data</h2>
     { populate }
