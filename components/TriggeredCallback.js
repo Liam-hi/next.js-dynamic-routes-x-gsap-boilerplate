@@ -1,9 +1,10 @@
 import React from 'react'
 import gsap from "gsap";
 import { useLayoutEffect, useRef} from "react";
+import Projects from './Projects';
 
 function Box({ children }) {
-    return <div className="box">{children}</div>;
+    return <>{children}</>;
   }
   
   function Circle({ children }) {
@@ -20,8 +21,8 @@ export default function TriggeredCallback() {
           .to(".box", {
             rotation: 360
           }, "start")
-          .to(".circle", {
-            x: 100
+          .to(".swiper", {
+            x: -20
           }, "start");
         }, app);
         return () => ctx.revert();
@@ -29,7 +30,7 @@ export default function TriggeredCallback() {
   return (
     <div className="app" ref={app}>
         <Box>box</Box>
-        <Circle>circle</Circle>
+        <Circle><Projects /></Circle>
     </div>
   )
 }

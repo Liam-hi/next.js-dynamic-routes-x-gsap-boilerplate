@@ -1,25 +1,37 @@
+
+
+import Navbar from '@/components/Navbar';
 import { productionBrowserSourceMaps } from '@/next.config';
 import { useRouter } from 'next/router';
 import React from 'react'
+import data from '@/utils/data';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useRef } from 'react';
+import { useIsPresent } from 'framer-motion';
+
 
 export default function Details() {
-    const data = [
-        { name: 'Nima', id: 1 },
-        { name: 'Li', id: 2 },
-        { name: 'Lisa', id: 3 },
-    ];
-    const router = useRouter();
-    
-    /* console.log(router.pathname); */
-    /* console.log(router.query.id); */
+  const router = useRouter();
+  const ref = useRef();
+  const isPresent = useIsPresent();
+  ref.current = isPresent ? router.query.id : ref.current;
+  const retrieveData = data.find((x) => x.id == ref.current);
 
-    const retrieveData = data.find(x => x.id == router.query.id);
-    
   return (
     <div>
-        <h1>Retrieve data</h1>
-        <h1>{retrieveData.name}</h1>
-      
+      <Navbar />
+      <a className="explore">
+        <span
+          onClick={(e) => {
+            router.back();
+          }}
+        >
+          Back
+        </span>
+      </a>
+      <h1>Retrieve data</h1>
+      <h2>{retrieveData?.name}</h2>
     </div>
-  )
+  );
 }
