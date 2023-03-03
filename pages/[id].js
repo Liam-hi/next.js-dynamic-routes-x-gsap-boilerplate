@@ -31,7 +31,7 @@ export default function Details() {
         </span>
       </a>
       <h1>Retrieve data</h1>
-      <h2>{retrieveData?.name}</h2>
+      <h2>{retrieveData?.img}</h2>
     </div>
   );
 }

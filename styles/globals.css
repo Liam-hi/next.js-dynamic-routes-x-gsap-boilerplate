@@ -17,6 +17,16 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'HelveticaNowDisplay';
+  src: url('../asset/fonts/HelveticaNowDisplay-Regular.woff2') format('woff2'),
+      url('../asset/fonts/HelveticaNowDisplay-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 
 
 * {
@@ -27,6 +37,7 @@
 }
 
 body {
+  font-family: 'HelveticaNowDisplay';
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility !important;
   height: 100vh;
@@ -37,10 +48,10 @@ body {
 }
 
 .link__text {
-  font-family: 'Neue Montreal';
-  font-size: 1.5rem;
+  font-size: 20px;
   letter-spacing: -0.8px;
   transform: translateY(100%);
+  
 }
 
 #__next {
@@ -59,12 +70,14 @@ body {
   position: relative;
   z-index: 100;
   top: 0;
-  height: 54px;
+  height: 120px;
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+
   justify-content: space-between;
   border-bottom: 1px solid #000;
+
 
 }
 
@@ -86,7 +99,7 @@ a:active {
 }
 
 .active:visited {
-  color: #808080;
+  color: #ED1E25;
 }
 
 .w-24 {
@@ -96,13 +109,16 @@ a:active {
 
 .w-8 {
   padding-top: 12px;
-  width: 160px;
+  width: 300px;
   height: auto;
   overflow: hidden;
 }
 
 .w-12 {
   overflow: hidden;
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
 } 
 
 
@@ -112,17 +128,25 @@ a:active {
 } */
 
 .logo {
-  width: 100%;
+  width: 95%;
 }
 
 .caption {
+  width: 95%;
+  display: flex;
+}
+
+.caption-wrapper {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .swiper {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -139,7 +163,28 @@ a:active {
   position: absolute;
   height: 100vh;
   width: 100%;
-  padding: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.project-title {
+  transform: translateY(100%);
+  font-size: 20px;
+}
+
+.project-desc {
+  transform: translateY(100%);
+}
+
+.relay {
+  max-width: 100%;
+}
+
+.l-text {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 44px; 
+  /* padding-top: 40px; */
 }
 
 

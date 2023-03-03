@@ -1,6 +1,8 @@
 import { Navigation, Pagination, Scrollbar, A11y, Mousewheel, FreeMode } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import data from '@/utils/data'
+import Link from 'next/link'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -8,11 +10,41 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
+import { motion } from 'framer-motion'
+
 
 export default function Projects() {
+    const populate = data.map(x =>
+            <SwiperSlide key={x.id} >
+                <figure>
+                <Link key={x.id} href={`/${x.id}`}>
+                    <img className='logo'src={x.img}/>
+                    </Link>
+                    <figcaption className='caption'>
+                        <div className="caption-wrapper">
+                            <motion.p className='project-title'
+                                key="kd" 
+                                exit={{transform: 'translateY(100%)'}} 
+                                initial={{opacity: 1}} 
+                                animate={{transform: 'translateY(0)'}} 
+                                transition={{ duration: 0.8, ease: "easeInOut" }} 
+                            >Spur Terra at National Western Center</motion.p>
+                            <motion.p key="kksks" 
+                                exit={{transform: 'translateY(100%)'}} 
+                                initial={{opacity: 1}} 
+                                animate={{transform: 'translateY(0)'}} 
+                                transition={{ duration: 0.8, ease: "easeInOut" }} 
+                                className='project-desc'>Commercial</motion.p>
+                        </div>
+                    </figcaption>
+                </figure>
+            </SwiperSlide>
+      
+      );
 
     
   return (
+
     <Swiper
     modules={[Navigation, Pagination, Scrollbar, A11y, Mousewheel, FreeMode]}
     mousewheel={true}
@@ -37,31 +69,8 @@ export default function Projects() {
     
     onSlideChange={() => console.log('slide change')}
   >
-    <SwiperSlide>
-        <figure>
-            <img className='logo'src='images/2022-01-13-abstracta-2022-333-1024x683.jpg'/>
-            <figcaption className='caption'>
-                <p>jsjs</p>
-                <p>ksks</p>
-            </figcaption>
-        </figure>
-    
-    </SwiperSlide>
-    <SwiperSlide>
-    <img className='logo'src='images/2022-01-13-abstracta-2022-333-1024x683.jpg'/>
-    </SwiperSlide>
-    <SwiperSlide>
-    <img className='logo'src='images/king-021-1024x715.jpg'/>
-    </SwiperSlide>
-    <SwiperSlide>
-    <img className='logo'src='images/lasse-olsson-photo-16009-1024x683.jpg'/>
-    </SwiperSlide>
-    <SwiperSlide>
-    <img className='logo'src='images/2022-01-13-abstracta-2022-333-1024x683.jpg'/>
-    </SwiperSlide>
-    <SwiperSlide>
-    <img className='logo'src='images/king-021-1024x715.jpg'/>
-    </SwiperSlide>
+      { populate }
+
   </Swiper>
   )
 }
